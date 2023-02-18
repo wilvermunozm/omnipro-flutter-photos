@@ -1,1 +1,1 @@
-const String serverUrl = '';
+const String serverUrl = 'jsonplaceholder.typicode.com';

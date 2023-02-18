@@ -27,12 +27,9 @@ class PhotoDataSource implements PhotoRepositoryDataSource {
     });
     if (response.statusCode == 200) {
       var decodedJson = json.decode(response.body);
-      List<PhotoModel> clientList = <PhotoModel>[];
-      for (Map<String, dynamic> item in decodedJson) {
-        var client = PhotoModel.fromJson(item);
-        clientList.add(client);
-      }
-      return clientList;
+
+      final jsonListPhotos = List.from(decodedJson);
+      return jsonListPhotos.map((photoJson) => PhotoModel.fromJson(photoJson)).toList();
     } else {
       throw ServerFailure('Something went wrong while requesting photo list');
     }

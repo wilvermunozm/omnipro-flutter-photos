@@ -15,7 +15,7 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
     on<PhotoEvent>((event, emit) async {
       if (event is GetPhotosEvent) {
         emit(Loading());
-        final result = await getPhotoListUseCase(NoParams());
+        final result = await getPhotoListUseCase.call(NoParams());
         result.fold(
           (left) => emit(Error(errorMessage: left.toString())),
           (right) {

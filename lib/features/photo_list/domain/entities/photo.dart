@@ -2,7 +2,7 @@
 import 'package:equatable/equatable.dart';
 
 class Photo extends Equatable {
-  final String id;
+  final int id;
   final String title;
   final String url;
   final String thumbnailUrl;
