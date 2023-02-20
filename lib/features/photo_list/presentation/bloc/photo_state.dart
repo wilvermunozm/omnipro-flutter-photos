@@ -22,11 +22,17 @@ class Loading extends PhotoState {
 
 class Loaded extends PhotoState {
   final List<Photo> photoList;
+  final List<Photo> photoListInView;
+  final int page;
 
-  const Loaded(this.photoList) : super(photoList);
+  const Loaded(
+    this.photoList,
+    this.photoListInView,
+    this.page,
+  ) : super(photoList);
 
   @override
-  List<Object> get props => [photoList];
+  List<Object> get props => [photoList, photoListInView, page];
 }
 
 class Error extends PhotoState {

@@ -27,7 +27,6 @@ class PhotoDataSource implements PhotoRepositoryDataSource {
     });
     if (response.statusCode == 200) {
       var decodedJson = json.decode(response.body);
-
       final jsonListPhotos = List.from(decodedJson);
       return jsonListPhotos.map((photoJson) => PhotoModel.fromJson(photoJson)).toList();
     } else {

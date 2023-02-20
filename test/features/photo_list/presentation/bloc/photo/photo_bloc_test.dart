@@ -34,7 +34,7 @@ void main() {
           return bloc;
         },
         act: (bloc) => bloc.add(const GetPhotosEvent()),
-        expect: () => <PhotoState>[Loading(), Loaded(tPhotoData)],
+        expect: () => <PhotoState>[Loading(), Loaded(tPhotoData, tPhotoData, 0)],
         tearDown: bloc.close,
         wait: const Duration(milliseconds: 500));
 

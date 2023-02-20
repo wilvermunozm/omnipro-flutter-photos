@@ -10,3 +10,7 @@ abstract class PhotoEvent extends Equatable {
 class GetPhotosEvent extends PhotoEvent {
   const GetPhotosEvent() : super();
 }
+
+class MoreResultsEvent extends PhotoEvent {
+  const MoreResultsEvent() : super();
+}

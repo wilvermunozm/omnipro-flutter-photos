@@ -12,10 +12,10 @@ final GetIt sl = GetIt.instance;
 
 Future<void> init() async {
   /// BLOC
-  sl.registerFactory(() => PhotoBloc(getPhotoListUseCase: sl()));
+  sl.registerLazySingleton(() => PhotoBloc(getPhotoListUseCase: sl()));
 
   ///USE CASE
-  sl.registerFactory(() => GetPhotoListUseCase(photoRepository: sl()));
+  sl.registerLazySingleton(() => GetPhotoListUseCase(photoRepository: sl()));
 
   /// REPOSITORY
   sl.registerLazySingleton<PhotoRepository>(() => PhotoRepositoryImpl(photoDataSource: sl()));
